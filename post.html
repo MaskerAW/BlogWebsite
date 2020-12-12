@@ -6,22 +6,34 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+<header>
+    <div class="menu">
+        <div id="logoct"><img src="logo.png" height="42" alt="" id="logo"></div>
+        <ul class="menunav">
+            <li><a href="#News">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="login.html" class="btnaccount">Sign up</a></li>
+        </ul>
+    </div>
+</header>
 <body>
     <section>
         <div class="container">
             <div class="image"></div>
             <div class="form">
                 <h1>Posting</h1>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <select name="" id="" >
+                <textarea name="" id="txtpost" cols="50" rows="15"></textarea>
+                <select name="" id="slct" >
                     <option value="traveling">#Traveling</option>
                     <option value="feeling">#Feeling</option>
                     <option value="funny">#Funny</option>
                     <option value="review">#Review</option>
                 </select>
-                <button class="btn-post">Post</button>
+                <button class="btn">Post</button>
             </div>
         </div>
     </section>
 </body>
+<script src="app.js"></script>
 </html>
