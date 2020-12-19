@@ -1,7 +1,4 @@
-var ipemail = document.querySelector(".info.email");
-var ippass = document.querySelector(".info.password");
-var alrt = document.querySelector(".alrt");
-var btnlg = document.querySelector(".btn.lg");
+
 var logo = document.querySelector(".logo");
 var btnacc = document.querySelector(".btnaccount");
 var btsp = document.querySelector(".btnsp");
@@ -11,28 +8,15 @@ logo.addEventListener("click", function () {
     window.location.href = "main.html";
 })
 
-btnlg.addEventListener("click", check);
 
-checkinglg();
+var txtpost = document.querySelector(".txtpost");
+var btnpost = document.querySelector(".btn.btnpost");
 
-function checkinglg() {
-    if (online == true) {
-        btnsp.style.display = "none";
-    }
-    else {
-        btnsp.style.display = "block";
-    }
-}
+btnpost.addEventListener("click", longcheck);
 
-function check() {
-    if (ipemail.value == "" && ippass.value == "") {
-        alrt.style.display = "block";
+function longcheck() {
+    if (txtpost.value <= 20 || txtpost.value == "") {
+        alert("Vui long nhap nhieu hon!");
     }
-    else {
-        alrt.style.display = "none";
-        if (ipemail.value == "admin" && ippass.value == "abc") {
-            online = true;
-            window.location.href = "post.html";
-        }
-    }
+    
 }

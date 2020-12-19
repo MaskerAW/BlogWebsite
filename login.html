@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="menu">
@@ -32,5 +34,24 @@
     </section>
     <footer></footer>
 </body>
-<script src="app.js"></script>
+<script>
+    var ipemail = document.querySelector(".info.email");
+    var ippass = document.querySelector(".info.password");
+    var btnlg = document.querySelector(".btn.lg");
+    var alrt = document.querySelector(".alrt");
+    btnlg.addEventListener("click", check);
+    function check() {
+        if (ipemail.value == "" && ippass.value == "") {
+            alrt.style.display = "block";
+        }
+        else {
+            alrt.style.display = "none";
+            if (ipemail.value == "admin" && ippass.value == "abc") {
+                online = true;
+                window.location.href = "post.html";
+            }
+        }
+    }
+</script>
+
 </html>
