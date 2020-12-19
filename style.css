@@ -68,7 +68,8 @@ iframe {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-
+  margin: 20px;
+  padding: 10px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -172,10 +173,21 @@ section{
 .btn.pg{
   margin: 250px 0;
 }
-#txtpost{
+.txtpost{
   resize: none;
   margin: 15px;
+  font-size: 18px;
 }
-#slct{
-  width: 150px;
+.slct{
+  width: 200px;
+  height: 30px;
+}
+.form.n1, .form.n2{
+  display: none;
+}
+.noti{
+  display: none;
+}
+.form.s1,.form.s2{
+  display: none;
 }

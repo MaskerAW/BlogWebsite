@@ -9,14 +9,3 @@ logo.addEventListener("click", function () {
 })
 
 
-var txtpost = document.querySelector(".txtpost");
-var btnpost = document.querySelector(".btn.btnpost");
-
-btnpost.addEventListener("click", longcheck);
-
-function longcheck() {
-    if (txtpost.value <= 20 || txtpost.value == "") {
-        alert("Vui long nhap nhieu hon!");
-    }
-    
-}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<style>
+    .post1,.post2,.post3,.post4,.post5{
+        display: none;
+    }
+</style>
+<body>
+    <div class="post1">
+        <h1></h1>
+        <p></p>
+    </div>
+    <div class="post2">
+        <h1></h1>
+        <p></p>
+    </div>
+    
+    <button class="btnLogOut">Log Out</button>
+</body>
+<script>
+
+    var post1, post2;
+    var title1, title2;
+    var content1, content2;
+
+    title1 = localStorage.getItem("input1");
+    title2 = localStorage.getItem("input2");
+    content1 = localStorage.getItem("textarea1");
+    content2 = localStorage.getItem("textarea2");
+
+    post1 = document.querySelector(".post1");
+    setTitle1 = document.querySelector(".post1 h1");
+    setContent1 = document.querySelector(".post1 p");
+
+    post2 = document.querySelector(".post2");
+    setTitle2 = document.querySelector(".post2 h1");
+    setContent2 = document.querySelector(".post2 p");
+    
+    
+    function init() {
+        if(title1 !== ""
+            && title1 !== null
+            && content1 !== ""
+            && content1 !== null){
+                post1.style.display = "block";
+                setTitle1.textContent = title1;
+                setContent1.textContent = content1;
+                if(title2 !== ""
+                    && title2 !== null
+                    && content2 !== ""
+                    && content2 !== null){
+                        post2.style.display = "block";
+                        setTitle2.textContent = title2;
+                        setContent2.textContent = content2;
+                    }
+            }
+    }
+
+    init();
+    
+    function check1(){
+        if(localStorage.getItem("input1") !== "" 
+        && localStorage.getItem("input1") !== null 
+        && localStorage.getItem("textarea1") !== "" 
+        && localStorage.getItem("textarea1") !== null){
+            return true;
+        }else{
+            return false;
+        }       
+    }
+
+    function check2(){
+        if(localStorage.getItem("input2") !== "" 
+        && localStorage.getItem("input2") !== null 
+        && localStorage.getItem("textarea2") !== "" 
+        && localStorage.getItem("textarea2") !== null){
+            return true;
+        }else{
+            return false;
+        }       
+    }
+
+    var btnLogOut = document.querySelector(".btnLogOut");
+    btnLogOut.addEventListener('click', function() {
+        window.location.href = "index.html";
+    });
+
+
+
+</script>
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,30 +11,119 @@
     <div class="menu">
         <div id="logoct"><img src="logo.png" height="42" alt="" class="logo"></div>
         <ul class="menunav">
-            <li><a href="#News">News</a></li>
+            <li><a href="news.html">News</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="login.html" class="btnaccount">Sign up</a></li>
         </ul>
     </div>
 </header>
+
 <body>
     <section>
         <div class="container">
             <div class="image"></div>
-            <div class="form">
-                <h1>Posting</h1>
-                <textarea name="" class="txtpost" cols="50" rows="15"></textarea>
-                <select name="" id="slct" >
+            <div class="form n1">
+                <h1>Posting#1</h1>
+                <textarea name="" class="txtpost txthead1" cols="75" rows="1" placeholder="Title"></textarea>
+                <textarea name="" class="txtpost txtbody1" cols="75" rows="20"
+                    placeholder="What are you going to say?"></textarea>
+                <select name="" class="slct">
                     <option value="traveling">#Traveling</option>
                     <option value="feeling">#Feeling</option>
                     <option value="funny">#Funny</option>
                     <option value="review">#Review</option>
                 </select>
-                <button class="btn btnpost">Post</button>
             </div>
+
+            <div class="form n2">
+                <h1>Posting#2</h1>
+                <textarea name="" class="txtpost txthead2" cols="75" rows="1" placeholder="Title"></textarea>
+                <textarea name="" class="txtpost txtbody2" cols="75" rows="20"
+                    placeholder="What are you going to say?"></textarea>
+                <select name="" class="slct">
+                    <option value="traveling">#Traveling</option>
+                    <option value="feeling">#Feeling</option>
+                    <option value="funny">#Funny</option>
+                    <option value="review">#Review</option>
+                </select>
+            </div>
+            
+            <button class="btn btnpost">Post</button>
         </div>
+        <h1 class="noti">YOU REACH LIMIT POST</h1>
     </section>
 </body>
-<script src="app.js"></script>
+<script>
+    var btnpost = document.querySelector(".btn.btnpost");
+
+    var emailGet = localStorage.getItem("email");
+    var passwordGet = localStorage.getItem("password");
+
+    var input1, input2;
+    var textarea1, textarea2;
+    var insertPost1, insertPost2;
+
+    insertPost1 = document.querySelector(".form.n1");
+    insertPost2 = document.querySelector(".form.n2");
+
+    input1 = document.querySelector(".txtpost.txthead1");
+    input2 = document.querySelector(".txtpost.txthead2");
+
+    textarea1 = document.querySelector(".txtpost.txtbody1");
+    textarea2 = document.querySelector(".txtpost.txtbody2");
+
+    function init() {
+        insertPost1.style.display = "flex";
+        if (check1()) {
+            insertPost1.style.display = "none";
+            insertPost2.style.display = "flex";
+            if (check2()) {
+                document.querySelector(".noti").style.display = "flex";
+                document.querySelector(".container").style.display = "none";
+            }
+        }
+    }
+    init();
+
+    function check1() {
+        if (localStorage.getItem("input1") !== ""
+            && localStorage.getItem("input1") !== null
+            && localStorage.getItem("textarea1") !== ""
+            && localStorage.getItem("textarea1") !== null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function check2() {
+        if (localStorage.getItem("input2") !== ""
+            && localStorage.getItem("input2") !== null
+            && localStorage.getItem("textarea2") !== ""
+            && localStorage.getItem("textarea2") !== null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    btnpost.addEventListener('click', postNew);
+
+    function postNew() {
+        if (check1()) {
+            localStorage.setItem("input2", input2.value);
+            localStorage.setItem("textarea2", textarea2.value);
+        } else {
+            localStorage.setItem("input1", input1.value);
+            localStorage.setItem("textarea1", textarea1.value);
+        }
+
+        window.location.href = "news.html";
+    }
+</script>
+<script src="app.js">
+
+</script>
+
 </html>
