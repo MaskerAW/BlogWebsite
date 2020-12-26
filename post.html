@@ -12,7 +12,6 @@
         <div id="logoct"><img src="logo.png" height="42" alt="" class="logo"></div>
         <ul class="menunav">
             <li><a href="news.html">News</a></li>
-            <li><a href="#contact">Contact</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="login.html" class="btnaccount">Sign up</a></li>
         </ul>
@@ -25,9 +24,10 @@
             <div class="image"></div>
             <div class="form n1">
                 <h1>Posting#1</h1>
-                <textarea name="" class="txtpost txthead1" cols="75" rows="1" placeholder="Title"></textarea>
+                <textarea name="" class="txtpost txthead1" cols="75" rows="1" placeholder=" Title"></textarea>
+                <input type="file" class="img1" name="img" accept="image/*">
                 <textarea name="" class="txtpost txtbody1" cols="75" rows="20"
-                    placeholder="What are you going to say?"></textarea>
+                    placeholder=" What are you going to say?"></textarea>
                 <select name="" class="slct">
                     <option value="traveling">#Traveling</option>
                     <option value="feeling">#Feeling</option>
@@ -38,9 +38,10 @@
 
             <div class="form n2">
                 <h1>Posting#2</h1>
-                <textarea name="" class="txtpost txthead2" cols="75" rows="1" placeholder="Title"></textarea>
+                <textarea name="" class="txtpost txthead2" cols="75" rows="1" placeholder=" Title"></textarea>
+                <input type="file" class="img2" name="img" accept="image/*">
                 <textarea name="" class="txtpost txtbody2" cols="75" rows="20"
-                    placeholder="What are you going to say?"></textarea>
+                    placeholder=" What are you going to say?"></textarea>
                 <select name="" class="slct">
                     <option value="traveling">#Traveling</option>
                     <option value="feeling">#Feeling</option>
@@ -63,12 +64,16 @@
     var input1, input2;
     var textarea1, textarea2;
     var insertPost1, insertPost2;
+    var insertImgsw1, insertImgsw2;
 
     insertPost1 = document.querySelector(".form.n1");
     insertPost2 = document.querySelector(".form.n2");
 
     input1 = document.querySelector(".txtpost.txthead1");
     input2 = document.querySelector(".txtpost.txthead2");
+
+    insertImgsw1 = document.querySelector(".img1");
+    insertImgsw2 = document.querySelector(".img2");
 
     textarea1 = document.querySelector(".txtpost.txtbody1");
     textarea2 = document.querySelector(".txtpost.txtbody2");
@@ -114,9 +119,11 @@
         if (check1()) {
             localStorage.setItem("input2", input2.value);
             localStorage.setItem("textarea2", textarea2.value);
+            localStorage.setItem("imgsw2", insertImgsw2.value.replace("C:\\fakepath\\",""));
         } else {
             localStorage.setItem("input1", input1.value);
             localStorage.setItem("textarea1", textarea1.value);
+            localStorage.setItem("imgsw1", insertImgsw1.value.replace("C:\\fakepath\\",""));
         }
 
         window.location.href = "news.html";

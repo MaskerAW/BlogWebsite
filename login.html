@@ -14,7 +14,6 @@
             <div id="logoct"><img src="logo.png" height="42" alt="" class="logo"></div>
             <ul class="menunav">
                 <li><a href="news.html">News</a></li>
-                <li><a href="#contact">Contact</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="login.html">Sign up</a></li>
             </ul>
@@ -34,17 +33,20 @@
     </section>
     <footer></footer>
 </body>
-<script src="app.js">
+<script src="app.js"></script>
+<script>
     var ipemail = document.querySelector(".info.email");
     var ippass = document.querySelector(".info.password");
     var btnlg = document.querySelector(".btn.lg");
     var alrt = document.querySelector(".alrt");
     btnlg.addEventListener("click", check);
     function check() {
+        
         if (ipemail.value == "" && ippass.value == "") {
             alrt.style.display = "block";
         }
         else {
+            
             alrt.style.display = "none";
             if (ipemail.value == "admin" && ippass.value == "abc") {
                 online = true;

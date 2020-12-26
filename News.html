@@ -14,7 +14,6 @@
             <div id="logoct"><img src="logo.png" height="42" alt="" class="logo"></div>
             <ul class="menunav">
                 <li><a href="news.html">News</a></li>
-                <li><a href="#contact">Contact</a></li>
                 <li><a href="about.html">About</a></li>
                 <li class="btnsp"><a href="login.html">Sign up</a></li>
             </ul>
@@ -24,33 +23,41 @@
         <div class="container">
             <div class="form s1">
                 <h1></h1>
+                <img src="" alt="" class="img imgshow1">
                 <p></p>
             </div>
 
             <div class="form s2">
                 <h1></h1>
+                <img src="" alt="" class="img imgshow2">
                 <p></p>
             </div>
         </div>
     </section>
 </body>
+<script src="app.js"></script>
 <Script>
 
     var post1, post2;
     var title1, title2;
     var content1, content2;
+    var imgshow1, imgshow2;
 
     title1 = localStorage.getItem("input1");
     title2 = localStorage.getItem("input2");
     content1 = localStorage.getItem("textarea1");
     content2 = localStorage.getItem("textarea2");
+    imgshow1 = localStorage.getItem("imgsw1");
+    imgshow2 = localStorage.getItem("imgsw2");
 
     post1 = document.querySelector(".form.s1");
     setTitle1 = document.querySelector(".form.s1 h1");
+    setImgshow1 = document.querySelector(".form.s1 img");
     setContent1 = document.querySelector(".form.s1 p");
 
     post2 = document.querySelector(".form.s2");
     setTitle2 = document.querySelector(".form.s2 h1");
+    setImgshow2 = document.querySelector(".form.s2 img");
     setContent2 = document.querySelector(".form.s2 p");
 
 
@@ -61,6 +68,7 @@
             && content1 !== null) {
             post1.style.display = "flex";
             setTitle1.textContent = title1;
+            setImgshow1.src = "http://127.0.0.1:8887/"+ imgshow1;
             setContent1.textContent = content1;
             if (title2 !== ""
                 && title2 !== null
@@ -68,6 +76,7 @@
                 && content2 !== null) {
                 post2.style.display = "flex";
                 setTitle2.textContent = title2;
+                setImgshow2.src = "http://127.0.0.1:8887/"+ imgshow2;
                 setContent2.textContent = content2;
             }
         }
